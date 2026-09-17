@@ -2598,17 +2598,29 @@ nav.guilds__5e434 {
 
 
 /* =========================================================================== */
-/* Fix: Extend window Close button hitbox to the top-right screen corner */
+/* Fix: Full-size native-style window button hitboxes by nota9x */
 /* =========================================================================== */
-.visual-refresh div.winButtons_c38106 > :last-child {
-    position: relative;
+.visual-refresh div.winButtons_c38106 {
+    align-self: stretch;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
-.visual-refresh div.winButtons_c38106 > :last-child::before {
-    content: "";
-    position: absolute;
-    top: -8px;
-    right: -1px;
-    bottom: 0;
-    left: 0;
+.visual-refresh div.winButtons_c38106 > .winButton_c38106 {
+    align-self: stretch;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Keep Discord's window-control divider centered and subtle. */
+.visual-refresh div.winButtons_c38106.winButtonsWithDivider_c38106::before {
+    align-self: center !important;
+    height: 16px !important;
+    background-color: #1d1d1f !important;
 }
